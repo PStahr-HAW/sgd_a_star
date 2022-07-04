@@ -41,9 +41,9 @@ target_link_libraries(${EXE_NAME} PRIVATE ${LIB_NAME})
 #  RUNTIME DESTINATION lib/${PROJECT_NAME}
 #)
 
-#install(
-#  DIRECTORY include/
-#  DESTINATION include/)
+install(
+ DIRECTORY include/
+ DESTINATION include/)
 
 
 ### testing
