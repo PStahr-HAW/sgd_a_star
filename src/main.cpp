@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
     // set start and destination
     a.set_start(a_star::LatLon(53.555355, 10.0219594));
 
-    // Berliner Tor 21 (2x), U-Bahn Lohmuehlenstrasse, Wismarer Straße 3, Staftstrasse 69 (hinten), U-Bahn Berliner Tor
+    // Berliner Tor 21 (2x), U-Bahn Lohmuehlenstrasse, Wismarer Straße 3, Stiftstrasse 69 (hinten), U-Bahn Berliner Tor
     long long dest[] = {3693927703, 313339524, 788416436, 5139452007, 7156477916, 788416750};
     for (auto d : dest)
     {
