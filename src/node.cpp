@@ -1,4 +1,4 @@
-#include "../include/node.hpp"
+#include "../include/sgd_a_star/node.hpp"
 
 namespace a_star
 {

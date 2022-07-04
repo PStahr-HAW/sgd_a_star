@@ -1,6 +1,6 @@
 #include <vector>
 
-#include "../include/utils.hpp"
+#include "utils.hpp"
 
 namespace a_star
 {

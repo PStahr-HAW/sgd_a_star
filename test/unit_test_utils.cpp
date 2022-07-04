@@ -15,7 +15,7 @@
 #include <string>
 #include "gtest/gtest.h"
 
-#include "../include/utils.hpp"
+#include "sgd_a_star/utils.hpp"
 
 #define eps 1E-3
 
