@@ -13,15 +13,19 @@ FetchContent_Declare(
  googletest
  URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
 )
-FetchContent_MakeAvailable(googletest)
+FetchContent_Declare(
+ tinyxml2
+ URL https://github.com/leethomason/tinyxml2/archive/refs/tags/9.0.0.zip
+)
+FetchContent_MakeAvailable(googletest tinyxml2)
 
 # find dependencies
-find_package(tinyxml2_vendor REQUIRED)
-find_package(TinyXML2 REQUIRED)
+# find_package(tinyxml2_vendor REQUIRED)
+# find_package(TinyXML2 REQUIRED)
 
-set(dependencies
-  TinyXML2
-)
+# set(dependencies
+#   TinyXML2
+# )
 
 include_directories(include)
 
@@ -35,6 +39,13 @@ target_link_libraries(${LIB_NAME} tinyxml2)
 
 add_executable(${EXE_NAME} src/main.cpp)
 target_link_libraries(${EXE_NAME} PRIVATE ${LIB_NAME})
+
+set(package_files include/ src/ CMakeLists.txt LICENSE)
+add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-src.zip
+    COMMAND ${CMAKE_COMMAND} -E tar c ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-src.zip --format=zip -- ${package_files}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    DEPENDS ${package_files})
+add_custom_target(${PROJECT_NAME}_package DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-src.zip)
 
 #install(
 #  TARGETS ${EXE_NAME} client
