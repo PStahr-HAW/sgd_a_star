@@ -21,7 +21,7 @@ if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
     #cmake_minimum_required(VERSION 3.18)
     # option(A_STAR_BUILD_BENCHMARKS "whether or not benchmarks should be built" OFF)
     # option(A_STAR_BUILD_EXAMPLES   "whether or not examples should be built" ON)
-    option(A_STAR_BUILD_TESTS      "whether or not tests should be built" ON)
+    option(A_STAR_BUILD_TESTS      "whether or not tests should be built" OFF)
     #option(A_STAR_BUILD_DOCS       "whether or not docs should be built" OFF)
     option(A_STAR_BUILD_PACKAGE    "whether or not the package should be built" ON)
 
