@@ -1,21 +1,21 @@
 cmake_minimum_required(VERSION 3.5)
 project(a_star VERSION 2022.07.0 LANGUAGES CXX)
 
-# Default to C++17
+# ---------------------------------------------------------------------------------------
+# Compiler config
+# ---------------------------------------------------------------------------------------
 set(CMAKE_CXX_STANDARD 17)
 
-include(FetchContent)
-FetchContent_Declare(
- googletest
- URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
-)
-FetchContent_Declare(
- tinyxml2
- URL https://github.com/leethomason/tinyxml2/archive/refs/tags/9.0.0.zip
-)
-FetchContent_MakeAvailable(googletest tinyxml2)
+# ---------------------------------------------------------------------------------------
+# Set default build to release
+# ---------------------------------------------------------------------------------------
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose Release or Debug" FORCE)
+endif()
 
 add_subdirectory(src)
+#set(LIB_NAME a_star)
+#set(CPP_FILES src/a_star.cpp src/node.cpp src/users.cpp src/utils.cpp src/route.cpp)
 
 if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
     #cmake_minimum_required(VERSION 3.18)
