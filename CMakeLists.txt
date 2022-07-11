@@ -26,11 +26,11 @@ FetchContent_MakeAvailable(tinyxml2)
 include_directories(include)
 set(LIB_NAME a_star)
 set(CPP_FILES
-    a_star.cpp
-    node.cpp
-    route.cpp
-    users.cpp
-    utils.cpp)
+    src/a_star.cpp
+    src/node.cpp
+    src/route.cpp
+    src/users.cpp
+    src/utils.cpp)
 
 add_library(${LIB_NAME} ${CPP_FILES})
 add_library(${PROJECT_NAME}::${LIB_NAME} ALIAS ${LIB_NAME})
